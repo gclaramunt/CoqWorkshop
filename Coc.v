@@ -21,15 +21,15 @@ Infix
 *)
 
 Section E4.
-Variable A: Set.
+Variable A : Set.
 
-Definition composition := fun (x:B->C)(y:A->B)(z:A)=>(x (y z)). 
+Definition composition { A B C } := fun (x:B->C)(y:A->B)(z:A)=>(x (y z)).
 Infix "o" := composition (left associativity, at level 94).
 
 
-Definition id := ....
+Definition id { A } := ....
 
-Theorem e4 : forall x:A, (id o id) x = id x
+Theorem e4 : forall x:A, (id o id) x = id x.
 Proof.
 
 Qed.
